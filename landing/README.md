@@ -2,6 +2,24 @@
 
 A single-file landing page (`index.html`) for testing demand for **Steadily**, a GLP-1 tracker built around "your data is never held hostage". It collects waitlist emails plus four survey answers: journey stage, medication form, current tracker, and which plan they'd pick.
 
+## 0. Run it locally (no accounts needed)
+
+```bash
+python3 landing/server.py            # http://localhost:8080
+```
+
+`server.py` stands in for steps 1–3 below while you run the page on your own computer:
+
+| Step | Hosted version | Local version |
+|---|---|---|
+| Signup form | Formspree | `POST /api/waitlist` saves to `landing/data/signups.csv`. Duplicate emails are ignored. |
+| Visitor count | Plausible / Cloudflare | Each page view goes to `landing/data/visits.csv`, with its `utm_source` |
+| Results | Formspree CSV + spreadsheet | **`http://localhost:8080/stats`**: live dashboard with Go/Maybe/Stop against the targets in step 5 |
+
+It only needs Python's standard library. `landing/data/` is git-ignored because it holds emails. If `WAITLIST_ENDPOINT` is set in `index.html`, the local server leaves it alone.
+
+For real traffic, the page still needs a public host (step 3) and a hosted form (step 1).
+
 ## 1. Connect the signup form (about 5 minutes)
 
 The form sends JSON to whatever URL you put in `WAITLIST_ENDPOINT` near the bottom of `index.html`. Until you set it, the form shows "Signups aren't connected yet", so no signups get lost silently.
