@@ -291,6 +291,31 @@ Post only after the group admin says yes. Older audience, who prefer warmer word
 
 ---
 
+## Ready-made videos (built from the scripts above)
+
+Files are in `marketing/video/out/`. Each is 1080×1920, 30 fps, MP4, faceless and **silent**, so add a sound in the app when you post. A trending sound at low volume, or a voiceover reading the on-screen text, both work.
+
+| File | Script | Length | Post caption (copy-paste) |
+|---|---|---|---|
+| `01-data-loss.mp4` | 1: POV, the update deleted everything | 21s | `Your data should be yours. Building a GLP-1 tracker that never holds it hostage. What do you track? 👇 #glp1 #glp1journey #glp1community #protein` |
+| `02-protein.mp4` | 2: Protein when you can barely eat | 22s | `Small appetite, big protein goals. What's your go-to? 👇 #glp1 #proteintips #glp1journey #highprotein` |
+| `03-life-after.mp4` | 3: Nobody talks about the after | 19s | `Life after the shot deserves a plan too. What helped you? (Not medical advice: talk to your doctor) #glp1 #glp1journey #maintenance` |
+| `04-five-promises.mp4` | 4: 5 promises (faceless version) | 22s | `Putting it in writing 🫡 What should promise #6 be? #glp1 #glp1community #buildinpublic` |
+| `05-18k-reviews.mp4` | 5: I read 17,881 reviews | 27s | `Research first, code second. Would you use this? #buildinpublic #indiedev #glp1 #startup` |
+
+- **Covers:** `NN-name-cover.png` (the first scene).
+- **Photo-carousel versions:** `carousel/NN-name/*.jpg`. TikTok and Instagram photo posts often get more reach than videos for this kind of slideshow content. TikTok needs JPEG, which these are.
+- **Honesty labels are built in:** competitor screens say "Illustration · not a real app", and unbuilt features say "Concept · coming soon". Keep them.
+- **Scripts 4 and 5 work even better on camera.** These faceless versions are a start; film yourself saying the same lines when you're ready.
+- **To change the text or timing:** edit `marketing/video/videos.json`, then run `node marketing/video/render-scenes.js marketing/video/videos.json /tmp/scenes && python3 marketing/video/build-videos.py marketing/video/videos.json /tmp/scenes marketing/video/out`.
+
+**Posting each video:**
+1. Upload the MP4 in TikTok, Instagram Reels or YouTube Shorts.
+2. Add a sound.
+3. Paste the caption.
+4. Make sure the bio link uses that platform's tracking code from the table at the top.
+5. Pin a first comment asking the question from the script.
+
 ## Two-week posting plan
 
 | Day | Reddit / Facebook | Short video |

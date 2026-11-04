@@ -1,0 +1,65 @@
+{
+  "videos": [
+    {
+      "id": "01-data-loss",
+      "title": "POV: the update deleted everything",
+      "scenes": [
+        { "type": "phone", "screen": "blank", "dur": 3.6, "small": true, "text": "POV: you open your GLP-1 tracker <span class=\"hl\">the morning of your doctor's appointment</span>", "label": "Illustration · not a real app" },
+        { "type": "phone", "screen": "blank", "dur": 3.0, "text": "14 months of shots, weights &amp; side effects… <span class=\"hl\">gone</span>", "label": "Illustration · not a real app" },
+        { "type": "phone", "screen": "paywall", "dur": 3.2, "text": "…and now it wants you to <span class=\"hl\">pay to start over</span> 🙃", "label": "Illustration · not a real app" },
+        { "type": "phone", "screen": "dashboard", "dur": 3.6, "badge": "Early design", "text": "So I'm building the tracker <span class=\"hl\">I wish existed</span>", "label": "Steadily · app in development" },
+        { "type": "cards", "dur": 3.8, "big": true, "text": "Three promises:", "cards": [ { "q": "✓ Free core, forever" }, { "q": "✓ Export your data, anytime" }, { "q": "✓ No surprise charges" } ] },
+        { "type": "end", "theme": "brand", "dur": 3.4, "emoji": "👇", "text": "Tell me what to build", "sub": "Join the waitlist. It's free." }
+      ]
+    },
+    {
+      "id": "02-protein",
+      "title": "Protein when you can barely eat",
+      "scenes": [
+        { "type": "caption", "dur": 2.8, "emoji": "🍽️", "text": "When your appetite is <span class=\"hl\">this small</span>, protein is everything" },
+        { "type": "foods", "dur": 4.6, "text": "High-protein foods people on GLP-1s swear by:", "items": [ { "e": "🥣", "t": "Greek yogurt" }, { "e": "🥤", "t": "Protein shakes" }, { "e": "🧀", "t": "Cottage cheese" }, { "e": "🥚", "t": "Eggs" } ], "foot": "Not medical advice · ask your care team about your targets" },
+        { "type": "phone", "screen": "manual", "dur": 3.4, "text": "But logging every bite? <span class=\"hl\">Exhausting.</span>", "label": "Illustration" },
+        { "type": "phone", "screen": "snap", "dur": 4.2, "badge": "Concept · coming soon", "text": "So we're building <span class=\"hl\">snap-a-plate</span>: one photo, protein estimated", "small": true, "label": "Steadily · concept, coming soon" },
+        { "type": "phone", "screen": "dashboard", "dur": 3.8, "badge": "Early design", "text": "Protein, fiber &amp; water. <span class=\"hl\">Not calorie guilt.</span>", "label": "Steadily · app in development" },
+        { "type": "end", "theme": "brand", "dur": 3.4, "emoji": "🥄", "text": "What's your go-to protein?", "sub": "Tell me in the comments. Early access below." }
+      ]
+    },
+    {
+      "id": "03-life-after",
+      "title": "Nobody talks about the after",
+      "scenes": [
+        { "type": "caption", "dur": 3.2, "text": "Every GLP-1 app is built for while you're <span class=\"hl\">on</span> it." , "sub": "What about after?" },
+        { "type": "caption", "theme": "dark", "dur": 3.6, "text": "Stepping down. Pausing for cost. Done for good.", "sub": "That part can feel like you're on your own." },
+        { "type": "phone", "screen": "maintenance", "dur": 4.4, "badge": "Concept · coming soon", "small": true, "text": "A mode for <span class=\"hl\">life after the shot</span>: your trend vs a range you and your doctor agree on", "label": "Steadily · concept, coming soon" },
+        { "type": "lock", "theme": "dark", "dur": 4.0, "notif": "Your 7-day average is above your range. Might be a good time to check in with your care team.", "text": "A gentle nudge. <span class=\"hl\">No guilt, no advice.</span>", "label": "Concept · not medical advice" },
+        { "type": "end", "theme": "brand", "dur": 3.6, "emoji": "💬", "text": "Been through it? What would've helped?", "sub": "Always talk to your doctor. This is a tracking app, not advice." }
+      ]
+    },
+    {
+      "id": "04-five-promises",
+      "title": "5 promises, in writing",
+      "scenes": [
+        { "type": "caption", "dur": 3.2, "emoji": "✍️", "text": "I'm building a GLP-1 tracker, and I'm putting <span class=\"hl\">5 promises in writing</span>" },
+        { "type": "promise", "dur": 3.0, "n": "1", "title": "Free core, forever", "body": "Shots, protein, weight and reminders never go behind a paywall." },
+        { "type": "promise", "dur": 3.0, "n": "2", "title": "Your data is yours", "body": "Export everything, CSV and PDF, even on the free plan." },
+        { "type": "promise", "dur": 3.0, "n": "3", "title": "No surprise charges", "body": "We warn you 2 days before any free trial ends." },
+        { "type": "promise", "dur": 3.0, "n": "4", "title": "One-tap cancel", "body": "No mazes. No emails. No “are you sure?” ×5." },
+        { "type": "promise", "dur": 3.0, "n": "5", "title": "Nothing taken away", "body": "A free feature stays free. Updates only add." },
+        { "type": "end", "theme": "brand", "dur": 3.6, "emoji": "🫡", "text": "Hold me to it.", "sub": "What should promise #6 be?" }
+      ]
+    },
+    {
+      "id": "05-18k-reviews",
+      "title": "I read 17,881 app reviews before building anything",
+      "scenes": [
+        { "type": "caption", "dur": 3.2, "emoji": "📱", "text": "Before building my app, I read <span class=\"hl\">17,881 App Store reviews</span>" },
+        { "type": "cards", "dur": 4.4, "text": "The 1-star reviews all sounded the same:", "cards": [ { "stars": "★☆☆☆☆", "q": "“Every time there's an update, something is taken away.”", "cite": "App Store review, 2026" }, { "stars": "★☆☆☆☆", "q": "“They just charged me $199.00 yesterday and I can't get a refund.”", "cite": "App Store review, 2026" }, { "stars": "★☆☆☆☆", "q": "“All my data is gone! It's wanting me to start over and pay?!”", "cite": "App Store review, 2026" } ] },
+        { "type": "chart", "dur": 4.6, "text": "What people complain about in bad reviews:", "bars": [ { "l": "Paywalls & price", "v": 24, "hot": true }, { "l": "Bugs, crashes & lost data", "v": 18, "hot": true }, { "l": "Bad updates", "v": 16, "hot": true }, { "l": "Surprise charges", "v": 15, "hot": true }, { "l": "Support never answers", "v": 11 }, { "l": "Missing a feature", "v": 5 } ], "foot": "5,651 one- to three-star reviews of 48 apps, keyword-tagged · Nov 2026" },
+        { "type": "caption", "theme": "dark", "dur": 3.6, "text": "Missing features? Only 5%.", "sub": "People mostly hate the business model, not the app." },
+        { "type": "phone", "screen": "dashboard", "dur": 3.8, "badge": "Early design", "small": true, "text": "So I'm building <span class=\"hl\">Steadily</span>: a GLP-1 tracker with a free core, export anytime, no surprise charges", "label": "Steadily · app in development" },
+        { "type": "phone", "screen": "form", "dur": 3.6, "text": "Testing if people want it <span class=\"hl\">before</span> I write the app", "label": "The real waitlist page" },
+        { "type": "end", "theme": "brand", "dur": 3.6, "emoji": "📈", "text": "Follow along.", "sub": "I'll share the numbers either way." }
+      ]
+    }
+  ]
+}
