@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Steadily — GLP-1 Tracker</title>
+<meta name="description" content="Track your GLP-1 shots or pills, protein and progress in seconds. A free core that stays free, data you can always export, and no surprise charges.">
+<meta property="og:title" content="Steadily — the GLP-1 tracker that never holds your data hostage">
+<meta property="og:description" content="Shots, protein and progress in seconds. Free core forever. Export anytime. Join the waitlist.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Analytics (optional): paste a Plausible / Cloudflare Web Analytics snippet here to count visitors. See README. -->
+<style>
+  :root {
+    --bg: #FBF8F3;
+    --bg-2: #F3EEE5;
+    --card: #FFFFFF;
+    --ink: #14302B;
+    --muted: #556A64;
+    --line: #E6DFD3;
+    --brand: #1F6F5C;
+    --brand-ink: #FFFFFF;
+    --brand-soft: #E3F0EB;
+    --accent: #E9894A;
+    --accent-soft: #FCEBDD;
+    --danger: #B4442F;
+    --shadow: 0 20px 50px -24px rgba(20, 48, 43, .35);
+    --radius: 18px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0F1715; --bg-2: #13201D; --card: #182623; --ink: #E9F2EF; --muted: #9DB3AC;
+      --line: #263632; --brand: #5CC3A5; --brand-ink: #0D1F1A; --brand-soft: #18322B;
+      --accent: #F3A46E; --accent-soft: #3A2A1E; --danger: #F08A73;
+      --shadow: 0 20px 50px -24px rgba(0, 0, 0, .7);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0F1715; --bg-2: #13201D; --card: #182623; --ink: #E9F2EF; --muted: #9DB3AC;
+    --line: #263632; --brand: #5CC3A5; --brand-ink: #0D1F1A; --brand-soft: #18322B;
+    --accent: #F3A46E; --accent-soft: #3A2A1E; --danger: #F08A73;
+    --shadow: 0 20px 50px -24px rgba(0, 0, 0, .7);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.6 Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { font-family: Fraunces, Georgia, serif; font-weight: 650; line-height: 1.12; margin: 0 0 .5em; letter-spacing: -.01em; }
+  h1 { font-size: clamp(2.3rem, 6vw, 3.8rem); }
+  h2 { font-size: clamp(1.7rem, 4vw, 2.5rem); }
+  h3 { font-size: 1.2rem; font-family: Inter, system-ui, sans-serif; font-weight: 700; letter-spacing: 0; }
+  p { margin: 0 0 1em; }
+  a { color: var(--brand); }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+  .eyebrow { display: inline-block; font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--brand); background: var(--brand-soft); padding: 6px 12px; border-radius: 99px; margin-bottom: 18px; }
+  .muted { color: var(--muted); }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border: 0; cursor: pointer; font: 600 1rem/1 Inter, system-ui, sans-serif; padding: 16px 24px; border-radius: 14px; background: var(--brand); color: var(--brand-ink); text-decoration: none; transition: transform .15s ease, box-shadow .15s ease; box-shadow: 0 10px 24px -12px var(--brand); }
+  .btn:hover { transform: translateY(-1px); }
+  .btn:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+  /* Nav */
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.15rem; color: var(--ink); text-decoration: none; }
+  .logo-mark { width: 30px; height: 30px; border-radius: 9px; background: var(--brand); display: grid; place-items: center; }
+  .logo-mark svg { width: 18px; height: 18px; }
+  nav .btn { padding: 11px 16px; font-size: .92rem; box-shadow: none; }
+
+  /* Hero */
+  .hero { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; padding: 36px 0 72px; }
+  .hero p.lead { font-size: 1.2rem; color: var(--muted); max-width: 36ch; }
+  .promise-row { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: 22px; font-size: .92rem; color: var(--muted); }
+  .promise-row span { display: inline-flex; align-items: center; gap: 6px; }
+  .tick { width: 18px; height: 18px; border-radius: 50%; background: var(--brand-soft); color: var(--brand); display: inline-grid; place-items: center; font-size: 11px; font-weight: 800; flex: none; }
+
+  /* Phone mockup */
+  .phone { justify-self: center; width: min(320px, 100%); aspect-ratio: 9/17; background: var(--card); border: 10px solid var(--ink); border-radius: 44px; box-shadow: var(--shadow); padding: 22px 16px; display: flex; flex-direction: column; gap: 12px; position: relative; overflow: hidden; }
+  .phone::before { content: ""; position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 90px; height: 22px; background: var(--ink); border-radius: 20px; }
+  .phone .hello { margin-top: 18px; font-size: .8rem; color: var(--muted); }
+  .phone .hello b { display: block; font-size: 1.15rem; color: var(--ink); font-family: Fraunces, Georgia, serif; }
+  .tile { background: var(--bg); border: 1px solid var(--line); border-radius: 16px; padding: 12px 14px; }
+  .tile small { color: var(--muted); font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .06em; }
+  .shot { display: flex; justify-content: space-between; align-items: center; }
+  .shot b { font-size: 1rem; }
+  .pill-tag { background: var(--accent-soft); color: var(--accent); font-size: .72rem; font-weight: 700; padding: 4px 9px; border-radius: 99px; }
+  .rings { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; text-align: center; }
+  .ring { --p: 70; width: 62px; height: 62px; margin: 4px auto 6px; border-radius: 50%; background: conic-gradient(var(--c, var(--brand)) calc(var(--p) * 1%), var(--line) 0); display: grid; place-items: center; }
+  .ring::after { content: attr(data-v); width: 48px; height: 48px; border-radius: 50%; background: var(--bg); display: grid; place-items: center; font-size: .72rem; font-weight: 700; }
+  .rings span { font-size: .7rem; color: var(--muted); font-weight: 600; }
+  .spark { width: 100%; height: 56px; }
+  .snap { display: flex; align-items: center; gap: 10px; font-size: .82rem; }
+  .snap .cam { width: 34px; height: 34px; border-radius: 10px; background: var(--brand); color: var(--brand-ink); display: grid; place-items: center; flex: none; }
+
+  /* Sections */
+  section { padding: 72px 0; }
+  .band { background: var(--bg-2); }
+  .center { text-align: center; max-width: 720px; margin: 0 auto 40px; }
+  .pain { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .quote { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; font-size: 1.02rem; }
+  .quote p { font-family: Fraunces, Georgia, serif; font-size: 1.1rem; line-height: 1.4; }
+  .quote cite { font-style: normal; font-size: .82rem; color: var(--muted); }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .feature { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; }
+  .feature .ic { width: 44px; height: 44px; border-radius: 12px; background: var(--brand-soft); color: var(--brand); display: grid; place-items: center; margin-bottom: 14px; }
+  .feature .ic svg { width: 22px; height: 22px; }
+  .feature p { color: var(--muted); margin: 0; }
+  .feature.highlight { background: var(--brand); color: var(--brand-ink); border-color: transparent; }
+  .feature.highlight p { color: inherit; opacity: .88; }
+  .feature.highlight .ic { background: rgba(255,255,255,.18); color: inherit; }
+
+  .promises { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+  .promise { text-align: center; padding: 22px 14px; border-radius: var(--radius); background: var(--card); border: 1px solid var(--line); }
+  .promise .num { font-family: Fraunces, Georgia, serif; font-size: 2rem; color: var(--accent); line-height: 1; margin-bottom: 8px; }
+  .promise p { margin: 0; font-size: .93rem; color: var(--muted); }
+  .promise b { display: block; color: var(--ink); margin-bottom: 4px; }
+
+  .plans { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; max-width: 760px; margin: 0 auto; }
+  .plan { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; }
+  .plan.plus { border: 2px solid var(--brand); position: relative; }
+  .plan.plus .badge { position: absolute; top: -13px; left: 24px; background: var(--accent); color: #fff; font-size: .75rem; font-weight: 700; padding: 5px 10px; border-radius: 99px; }
+  .price { font-family: Fraunces, Georgia, serif; font-size: 2.3rem; margin: 6px 0 2px; }
+  .price small { font-family: Inter, sans-serif; font-size: .95rem; color: var(--muted); }
+  .plan ul { list-style: none; padding: 0; margin: 18px 0 0; }
+  .plan li { display: flex; gap: 10px; padding: 6px 0; }
+
+  /* Form */
+  .signup { display: grid; grid-template-columns: .9fr 1.1fr; gap: 40px; align-items: start; }
+  form { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 28px; box-shadow: var(--shadow); }
+  label { display: block; font-weight: 600; font-size: .92rem; margin: 0 0 6px; }
+  .field { margin-bottom: 18px; }
+  input[type=email], select { width: 100%; font: inherit; color: var(--ink); background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: 13px 14px; }
+  fieldset { border: 0; padding: 0; margin: 0 0 18px; }
+  legend { font-weight: 600; font-size: .92rem; margin-bottom: 8px; padding: 0; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chips label { margin: 0; font-weight: 500; }
+  .chips input { position: absolute; opacity: 0; pointer-events: none; }
+  .chips span { display: inline-block; padding: 9px 14px; border-radius: 99px; border: 1px solid var(--line); background: var(--bg); cursor: pointer; font-size: .9rem; transition: background .15s; }
+  .chips input:checked + span { background: var(--brand); color: var(--brand-ink); border-color: var(--brand); }
+  .chips input:focus-visible + span { outline: 3px solid var(--accent); outline-offset: 2px; }
+  form .btn { width: 100%; margin-top: 6px; }
+  .fine { font-size: .8rem; color: var(--muted); margin-top: 12px; }
+  .err { color: var(--danger); font-size: .9rem; margin-top: 10px; min-height: 1.2em; }
+  .thanks { display: none; text-align: center; padding: 20px 6px; }
+  .thanks .big { font-size: 2.6rem; }
+  form.done .fields { display: none; }
+  form.done .thanks { display: block; }
+
+  /* FAQ */
+  .faq { max-width: 760px; margin: 0 auto; }
+  details { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 4px 20px; margin-bottom: 10px; }
+  summary { cursor: pointer; font-weight: 600; padding: 14px 0; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; color: var(--brand); font-size: 1.3rem; line-height: 1; }
+  details[open] summary::after { content: "–"; }
+  details p { color: var(--muted); }
+
+  footer { padding: 40px 0 60px; border-top: 1px solid var(--line); font-size: .85rem; color: var(--muted); }
+  footer p { max-width: 80ch; }
+
+  @media (max-width: 900px) {
+    .hero, .signup { grid-template-columns: 1fr; }
+    .hero { padding-top: 10px; gap: 40px; }
+    .grid, .pain { grid-template-columns: 1fr 1fr; }
+    .promises { grid-template-columns: repeat(2, 1fr); }
+    .promises .promise:last-child { grid-column: span 2; }
+  }
+  @media (max-width: 600px) {
+    .wrap { padding: 0 16px; }
+    section { padding: 56px 0; }
+    .grid, .pain, .plans { grid-template-columns: 1fr; }
+    nav .btn { display: none; }
+    form { padding: 22px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <nav>
+    <a class="logo" href="#" aria-label="Steadily home">
+      <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15c3 0 4-6 7-6s3 6 6 6 3-3 5-3"/></svg></span>
+      Steadily
+    </a>
+    <a class="btn" href="#join">Join the waitlist</a>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div>
+      <span class="eyebrow">GLP-1 tracker · Coming soon to iPhone</span>
+      <h1>Your GLP-1 journey, tracked in seconds. Your data, always yours.</h1>
+      <p class="lead">Log shots or pills, hit your protein, and see your progress, with a free core that stays free and history you can take with you anytime.</p>
+      <a class="btn" href="#join">Get early access <span aria-hidden="true">→</span></a>
+      <div class="promise-row">
+        <span><span class="tick" aria-hidden="true">✓</span>Free core, forever</span>
+        <span><span class="tick" aria-hidden="true">✓</span>Export anytime</span>
+        <span><span class="tick" aria-hidden="true">✓</span>No surprise charges</span>
+        <span><span class="tick" aria-hidden="true">✓</span>Works with Apple Health</span>
+      </div>
+    </div>
+
+    <div class="phone" role="img" aria-label="Preview of the Steadily app showing next dose, protein, fiber and water rings, and a weight trend.">
+      <div class="hello">Good morning<b>Week 14 · You're on track</b></div>
+      <div class="tile shot">
+        <div><small>Next dose</small><br><b>Friday · 8:00 am</b></div>
+        <span class="pill-tag">2 days</span>
+      </div>
+      <div class="tile">
+        <small>Today</small>
+        <div class="rings">
+          <div><div class="ring" style="--p:72" data-v="86g"></div><span>Protein</span></div>
+          <div><div class="ring" style="--p:55; --c: var(--accent)" data-v="14g"></div><span>Fiber</span></div>
+          <div><div class="ring" style="--p:80; --c:#4A90C2" data-v="2.0L"></div><span>Water</span></div>
+        </div>
+      </div>
+      <div class="tile">
+        <small>Weight · last 12 weeks</small>
+        <svg class="spark" viewBox="0 0 260 56" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 8 C 30 10, 50 14, 70 18 S 110 26, 130 30 S 170 38, 190 41 S 230 45, 260 46" fill="none" stroke="var(--brand)" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="260" cy="46" r="4" fill="var(--brand)"/>
+        </svg>
+      </div>
+      <div class="tile snap"><span class="cam" aria-hidden="true">📷</span><span><b>Snap your plate</b><br><span class="muted">Protein estimated in seconds</span></span></div>
+    </div>
+  </div>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="center">
+        <span class="eyebrow">Why we're building this</span>
+        <h2>You shouldn't lose your progress to an app update.</h2>
+        <p class="muted">Thousands of GLP-1 users rely on tracker apps every week. Lately, too many have been burned by apps that change the deal.</p>
+      </div>
+      <div class="pain">
+        <div class="quote"><p>“All my data is gone! It’s wanting me to start over and pay?!”</p><cite>App Store review of a popular GLP-1 tracker, Nov 2026</cite></div>
+        <div class="quote"><p>“I lost over a year’s worth of data and information to provide to my doctor.”</p><cite>App Store review, Oct 2026</cite></div>
+        <div class="quote"><p>“Most other trackers put so many features behind a paywall.”</p><cite>App Store review, Oct 2026</cite></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="center">
+        <span class="eyebrow">What you get</span>
+        <h2>Everything your week on a GLP-1 needs. Nothing it doesn't.</h2>
+      </div>
+      <div class="grid">
+        <div class="feature">
+          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="3"/><path d="M8 2v4M16 2v4M3 10h18M9 15l2 2 4-4"/></svg></div>
+          <h3>Shots &amp; pills, one tap</h3>
+          <p>Log your weekly injection or daily pill exactly as your prescriber set it. Injection-site rotation and gentle reminders included.</p>
+        </div>
+        <div class="feature">
+          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></div>
+          <h3>Protein in seconds</h3>
+          <p>Snap your plate or scan a barcode. See protein, fiber and water at a glance, built for small appetites, not calorie obsession.</p>
+        </div>
+        <div class="feature">
+          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg></div>
+          <h3>Side effects, noted</h3>
+          <p>Quick check-ins for nausea, energy and more, so you can spot patterns around your dose day and talk them through with your care team.</p>
+        </div>
+        <div class="feature">
+          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></div>
+          <h3>Doctor-ready summary</h3>
+          <p>One tap creates a clean PDF of your doses, weight, protein and side effects for your next appointment.</p>
+        </div>
+        <div class="feature highlight">
+          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15c3 0 4-6 7-6s3 6 6 6 3-3 5-3"/></svg></div>
+          <h3>Life after the shot</h3>
+          <p>Stepping down or stopping? Keep tracking with a maintenance mode that shows your trend against the range you and your doctor agreed on.</p>
+        </div>
+        <div class="feature">
+          <div class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg></div>
+          <h3>Bring your history</h3>
+          <p>Import weight and activity from Apple Health, and bring your past log from another tracker via CSV. Export everything, anytime.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <div class="center">
+        <span class="eyebrow">The Steadily promise</span>
+        <h2>Five promises, in writing.</h2>
+        <p class="muted">We'd rather earn your subscription than trap you into one.</p>
+      </div>
+      <div class="promises">
+        <div class="promise"><div class="num">1</div><p><b>Free core forever</b>Dose log, protein, weight and reminders never go behind a paywall.</p></div>
+        <div class="promise"><div class="num">2</div><p><b>Your data, exportable</b>CSV and PDF export on every plan, including free.</p></div>
+        <div class="promise"><div class="num">3</div><p><b>Trial warning</b>We remind you 2 days before any free trial ends.</p></div>
+        <div class="promise"><div class="num">4</div><p><b>One-tap cancel</b>No mazes, no emails, no "are you sure?" x5.</p></div>
+        <div class="promise"><div class="num">5</div><p><b>Nothing taken away</b>A free feature stays free. Updates only add.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="center">
+        <span class="eyebrow">Planned pricing</span>
+        <h2>Simple, honest pricing.</h2>
+      </div>
+      <div class="plans">
+        <div class="plan">
+          <h3>Free</h3>
+          <div class="price">$0 <small>forever</small></div>
+          <p class="muted">Everything you need to track the basics.</p>
+          <ul>
+            <li><span class="tick" aria-hidden="true">✓</span>Dose log &amp; reminders</li>
+            <li><span class="tick" aria-hidden="true">✓</span>Protein, fiber &amp; water</li>
+            <li><span class="tick" aria-hidden="true">✓</span>Weight &amp; Apple Health sync</li>
+            <li><span class="tick" aria-hidden="true">✓</span>Full data export</li>
+          </ul>
+        </div>
+        <div class="plan plus">
+          <span class="badge">Founding members: 50% off year one</span>
+          <h3>Steadily Plus</h3>
+          <div class="price">$7.99 <small>/ month · or $49.99 / year</small></div>
+          <p class="muted">For people who want the full picture.</p>
+          <ul>
+            <li><span class="tick" aria-hidden="true">✓</span>Snap-a-plate protein logging</li>
+            <li><span class="tick" aria-hidden="true">✓</span>Side-effect patterns &amp; insights</li>
+            <li><span class="tick" aria-hidden="true">✓</span>Doctor-ready PDF summaries</li>
+            <li><span class="tick" aria-hidden="true">✓</span>Life-after-the-shot maintenance mode</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="join">
+    <div class="wrap signup">
+      <div>
+        <span class="eyebrow">Early access</span>
+        <h2>Be first in line.</h2>
+        <p class="muted">Join the waitlist for early access and founding-member pricing. Three quick questions help us build what you actually need. It takes 20 seconds.</p>
+        <p class="muted">We'll email you when the beta opens. No spam, and you can unsubscribe in one click.</p>
+      </div>
+
+      <form id="waitlist" novalidate>
+        <div class="fields">
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+          </div>
+
+          <fieldset>
+            <legend>Where are you in your GLP-1 journey?</legend>
+            <div class="chips">
+              <label><input type="radio" name="stage" value="starting_soon"><span>Starting soon</span></label>
+              <label><input type="radio" name="stage" value="on_it"><span>On it now</span></label>
+              <label><input type="radio" name="stage" value="stepping_down"><span>Stepping down</span></label>
+              <label><input type="radio" name="stage" value="stopped"><span>Stopped</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>How do you take it?</legend>
+            <div class="chips">
+              <label><input type="radio" name="form" value="injection"><span>Weekly injection</span></label>
+              <label><input type="radio" name="form" value="pill"><span>Daily pill</span></label>
+              <label><input type="radio" name="form" value="unsure"><span>Not sure yet</span></label>
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <label for="tracker">What do you use to track it today?</label>
+            <select id="tracker" name="tracker">
+              <option value="">Choose one</option>
+              <option value="shotsy">Shotsy</option>
+              <option value="meagain">MeAgain</option>
+              <option value="other_app">Another app</option>
+              <option value="notes">Notes app or spreadsheet</option>
+              <option value="nothing">Nothing yet</option>
+            </select>
+          </div>
+
+          <fieldset>
+            <legend>If Steadily launched today, which would you pick?</legend>
+            <div class="chips">
+              <label><input type="radio" name="plan" value="free"><span>Free is enough</span></label>
+              <label><input type="radio" name="plan" value="plus_monthly"><span>Plus · $7.99/mo</span></label>
+              <label><input type="radio" name="plan" value="plus_yearly"><span>Plus · $49.99/yr</span></label>
+            </div>
+          </fieldset>
+
+          <button class="btn" type="submit" id="submit">Join the waitlist</button>
+          <div class="err" id="err" role="alert" aria-live="polite"></div>
+          <p class="fine">By joining you agree to receive launch emails. We'll never sell your email.</p>
+        </div>
+
+        <div class="thanks" aria-live="polite">
+          <div class="big" aria-hidden="true">🎉</div>
+          <h3>You're on the list!</h3>
+          <p class="muted">We'll email you when early access opens. Know someone on a GLP-1 who's tired of losing their data? Share this page with them.</p>
+          <button class="btn" type="button" id="share">Share Steadily</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="center"><h2>Questions</h2></div>
+      <div class="faq">
+        <details><summary>Is Steadily medical advice?</summary><p>No. Steadily is a personal tracking tool. It records what your prescriber has told you to take. It never calculates, changes or recommends doses. Always follow your care team's guidance.</p></details>
+        <details><summary>Which medications does it work with?</summary><p>Any prescribed GLP-1 or GLP-1/GIP medication, whether it's a weekly injection or a daily pill. You enter your medication and schedule exactly as prescribed.</p></details>
+        <details><summary>Can I bring my history from another app?</summary><p>Yes. At launch you'll be able to import weight and activity from Apple Health, and import a past log from a spreadsheet or another tracker's CSV export. You can export everything from Steadily the same way.</p></details>
+        <details><summary>Where is my data stored? Do you sell it?</summary><p>Your health log lives on your iPhone. An optional encrypted backup keeps it safe when you switch phones, and you can export everything anytime. We never sell your data and never use it for advertising.</p></details>
+        <details><summary>What happens when I stop my medication?</summary><p>You keep tracking. Maintenance mode is built for life after the shot: keep logging weight, protein and activity, and see your trend against a range you set with your doctor.</p></details>
+        <details><summary>When does it launch?</summary><p>We're opening a private beta for waitlist members first. Join above and you'll be the first to know.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>Steadily</b> is a personal tracking app and is not a medical device. It does not diagnose, treat or provide medical advice. Steadily is not affiliated with, endorsed by or sponsored by any drug manufacturer or any other app mentioned on this page. All trademarks belong to their respective owners.</p>
+    <p>© <span id="yr">2026</span> Steadily</p>
+  </div>
+</footer>
+
+<script>
+  // ---- CONFIG ----------------------------------------------------------
+  // Paste your form endpoint here (e.g. Formspree: "https://formspree.io/f/abcdwxyz").
+  // Signups are sent as JSON via POST. See landing/README.md for setup.
+  const WAITLIST_ENDPOINT = "";
+  // ---------------------------------------------------------------------
+
+  document.getElementById("yr").textContent = new Date().getFullYear();
+
+  const form = document.getElementById("waitlist");
+  const err = document.getElementById("err");
+  const btn = document.getElementById("submit");
+  const params = new URLSearchParams(location.search);
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    err.textContent = "";
+    const fd = new FormData(form);
+    const email = (fd.get("email") || "").trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      err.textContent = "Please enter a valid email address.";
+      document.getElementById("email").focus();
+      return;
+    }
+    if (!WAITLIST_ENDPOINT) {
+      err.textContent = "Signups aren't connected yet. Site owner: set WAITLIST_ENDPOINT in index.html.";
+      return;
+    }
+    const payload = {
+      email,
+      stage: fd.get("stage") || "",
+      form: fd.get("form") || "",
+      tracker: fd.get("tracker") || "",
+      plan: fd.get("plan") || "",
+      utm_source: params.get("utm_source") || "",
+      utm_medium: params.get("utm_medium") || "",
+      utm_campaign: params.get("utm_campaign") || "",
+      utm_content: params.get("utm_content") || "",
+      referrer: document.referrer || "",
+      submitted_at: new Date().toISOString()
+    };
+    btn.disabled = true;
+    btn.textContent = "Joining…";
+    try {
+      const res = await fetch(WAITLIST_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      form.classList.add("done");
+      if (window.plausible) window.plausible("Signup", { props: { plan: payload.plan || "none", source: payload.utm_source || "direct" } });
+    } catch (ex) {
+      err.textContent = "Something went wrong. Please try again in a moment.";
+    } finally {
+      btn.disabled = false;
+      btn.textContent = "Join the waitlist";
+    }
+  });
+
+  document.getElementById("share").addEventListener("click", async () => {
+    const url = location.origin + location.pathname + "?utm_source=share";
+    const data = { title: "Steadily", text: "A GLP-1 tracker that never holds your data hostage. Join the waitlist:", url };
+    try {
+      if (navigator.share) { await navigator.share(data); }
+      else { await navigator.clipboard.writeText(url); document.getElementById("share").textContent = "Link copied ✓"; }
+    } catch (_) { /* user cancelled */ }
+  });
+</script>
+</body>
+</html>
