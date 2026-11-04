@@ -31,12 +31,12 @@ Willingness to pay is the strongest of the three finalists: solo operators alrea
   - **Price:** $39/mo solo, up to $599/mo for teams — [OneCrew](https://www.getonecrew.com/post/jobber-reviews). About $179/mo all-in for a solo operator with card processing (competitor estimate) — [FieldCamp](https://fieldcamp.ai/reviews/jobber-reviews/).
   - **Traction:** reportedly $167.5M revenue in Oct 2024, up from $143.2M in 2023 (Latka, low reliability) — [Latka](https://getlatka.com/companies/jobber). It claims 100,000+ customers and 400,000+ service pros — [Clay dossier](https://clay.com/dossier/jobber-funding). A podcast title says "300,000 trades pros" — [Agents of Scale podcast](https://www.audioscrape.com/podcast/agents-of-scale/episode/from-pen-paper-to-300000-trades-pros-on-ai-jobbers-playbook-76400).
   - **Funding:** a $100M growth round led by General Atlantic — [FF News](https://ffnews.com/newsarticle/jobber-raises-100-million-growth-round); [Yahoo Finance CA](https://ca.finance.yahoo.com/news/displacing-paper-jobber-bucks-tech-140045521.html). Total-funding estimates conflict ($83.8M per Latka vs ~$183.5M per Clay). Headcount went from 550 (Jul 2023) to 893 (Jun 2025) — [6figr](https://6figr.com/company/jobber).
-  - App Store rating and count were **not retrieved** (gap).
+  - **App Store:** about **4.7–4.8★ from ~18K–25K ratings**. Third-party trackers disagree: AppPricingLab 4.8★ / 18.0K; AppGoblin 4.79★ / 20.5K; Marlvel 4.72 / 24.7K (Marlvel is an automated aggregator; treat with caution) — [AppPricingLab](https://apppricinglab.com/compare/apple/1014146758/307184892); [AppGoblin](https://appgoblin.info/apps/1014146758/trends); [Marlvel](https://marlvel.ai/intel-report/business/com-getjobber-jobber).
 - **Joist** (owned by EverCommerce):
   - **Ratings:** iOS **4.7★ from 1,102 ratings** in an AppFollow snapshot (storefront and date unclear) — [AppFollow](https://apps.appfollow.io/ios/joist-invoice-estimate-app/592163563?country=ca). Google Play **1.9M installs, 12.4K ratings, 4.71★** — [AppGoblin](https://appgoblin.info/apps/com.joistapp.android.joist/trends). G2 **4.1 (31 reviews)** — [G2](https://www.g2.com/products/evercommerce-joist). Capterra AU **4.1 (89)** — [Capterra AU](https://www.capterra.com.au/software/1004933/joist).
   - **2026 changes:** a pricing tracker records Joist adding **"built-in AI estimate, invoice and note tools to Basics plan"** and a **new AI Receptionist add-on at $49/mo** (week 31 of 2026) — [PricingSaaS diff 2026W31](https://pricingsaas.com/companies/joist/diffs/2026W31). This is from a search snippet; the page itself could not be fetched.
   - **Price:** about $8–$32/mo — [OneCrew Joist pricing](https://www.getonecrew.com/post/joist-pricing).
-- **Housecall Pro**: the **Feb 2026** product update lists "Voice AI (Voice to invoice)" and a "refine it for me" editor — [Housecall Pro Feb 2026 updates](https://www.housecallpro.com/resources/february-2026-product-updates/). Trade press covered it as "AI-powered, voice-activated invoicing" — [PCT Online](https://www.pctonline.com/news/housecall-pro-ai-powered-voice-activated-invoices); [Contracting Business](https://contractingbusiness.com/industry-news/press-release/55316860/housecall-pro-brings-ai-powered-voice-activated-invoicing-to-the-trades). A competitor page (QuoteIQ) claims Housecall Pro has no AI photo-to-estimate feature; that claim is unverified — [myQuoteIQ](https://myquoteiq.com/best-ai-powered-crm-for-contractors/). Housecall Pro's price was not retrieved this session.
+- **Housecall Pro**: the **Feb 2026** product update lists "Voice AI (Voice to invoice)" and a "refine it for me" editor — [Housecall Pro Feb 2026 updates](https://www.housecallpro.com/resources/february-2026-product-updates/). Trade press covered it as "AI-powered, voice-activated invoicing" — [PCT Online](https://www.pctonline.com/news/housecall-pro-ai-powered-voice-activated-invoices); [Contracting Business](https://contractingbusiness.com/industry-news/press-release/55316860/housecall-pro-brings-ai-powered-voice-activated-invoicing-to-the-trades). A competitor page (QuoteIQ) claims Housecall Pro has no AI photo-to-estimate feature; that claim is unverified — [myQuoteIQ](https://myquoteiq.com/best-ai-powered-crm-for-contractors/). Pricing in 2026: **Basic is about $59/mo billed annually or $79/mo billed monthly**. There is no permanent free plan (14-day trial). Basic was reportedly $39 and became $49 in 2023, per pricing-guide sites — [SchedulingKit](https://schedulingkit.com/pricing-guides/housecall-pro-pricing); [Projul 2026 analysis (competitor)](https://projul.com/blog/housecall-pro-pricing-analysis-2026); [Costbench](https://costbench.com/software/field-service-management/housecall-pro/).
 - **Invoice2go** (BILL): BILL acquired it for **~US$625M** (75% stock, 25% cash) in July 2021. At the time it had **~226,000 paying subscribers** in 150+ countries — [BILL press release](https://www.bill.com/press-release/billcom-to-acquire-invoice2go); [Accounting Today](https://www.accountingtoday.com/news/bill-com-to-acquire-invoice2go-in-625m-deal). Startup Daily's URL says "$850 million", probably the AUD figure — [Startup Daily](https://www.startupdaily.net/2021/07/us-fintech-bill-com-snaps-up-invoice2go-for-850-million/). No AI-quote feature was found.
 - **Invoice Simple**: tiers are Essentials (free or about $5.83–6.99, **3 invoices/mo**), **Plus $14.99 (10 invoices/mo, due-date reminders)** and **Premium $21.99 (unlimited)**. Plus and Premium prices rose between Mar 30 and Jun 29, 2026 — [PricingSaaS](https://pricingsaas.com/companies/invoicesimple); [Invoice Simple Essentials page](https://www.invoicesimple.com/pricing-packages/essentials); [subscribed.fyi](https://subscribed.fyi/?p=93165). Free-plan sources conflict: the App Store says "2 free documents, send 1", and the help center describes a 14-day trial — [Invoice Simple help](https://help.invoicesimple.com/en/articles/10707933-does-invoice-simple-offer-a-free-trial). No voice or AI feature was found.
 - **QuickBooks**: the Payments Agent launched **July 1, 2025**. It creates and sends invoices and reminders and predicts late payments — [Intuit IR](https://investors.intuit.com/news-events/press-releases/detail/1258/intuit-introduces-ground-breaking-virtual-team-of-ai-agents-to-fuel-growth-for-businesses).
@@ -89,6 +89,11 @@ Willingness to pay is the strongest of the three finalists: solo operators alrea
   - **2,875,590 construction businesses with no paid employees (2022)**, from a commercial guide citing Census; treat with caution — [Causo](https://hub.causo.ai/guides/construction-contractor-lists-2026).
   - Older trade splits: 2006 electrical nonemployers 119,657 (NAICS 23821); 2000 plumbing/HVAC 108,309 — [Census archive](https://webarchive.library.unt.edu/web/20080920065946/http:/www.census.gov/epcd/nonemployer/latest/us/US000_23.HTM).
 - **Growth:** "Solo plumbing and HVAC shops up 16% since 2019" (weak source; sales, not headcount) — [StartBusinessByState](https://startbusinessbystate.com/solo-plumbing-hvac-businesses/).
+- **Total employment (2024, secondary sites citing the BLS Occupational Outlook Handbook):**
+  - Electricians **~818,700 jobs**, projected 896,100 by 2034.
+  - Plumbers, pipefitters and steamfitters **~504,500**.
+  - HVAC-R mechanics **~425,200** (an unlabeled table; treat as approximate), with 40,100 openings a year.
+  - Sources — [trade-schools.net](https://www.trade-schools.net/articles/electrician-vs-hvac-vs-plumber); [TWS OES table](https://www.tws.edu/oes); [Facilities Dive](https://www.facilitiesdive.com/news/skilled-trades-initiatives-expand-as-demand-for-workers-is-projected-to-gro/759123/).
 - **Outlook:** projected growth 2024–34 is electricians ~9%, HVAC ~8%, plumbers ~4%. May 2025 median wages: plumbers $63,800, electricians $63,190, HVAC $61,010 (secondary citing BLS OEWS) — [TradeCareerPath](https://tradecareerpath.com/data/skilled-trade-salary-statistics-2026/).
 - **Communities** (undated snapshots):
   - r/electricians **~471K–559K** — [GummySearch](https://gummysearch.com/r/electricians).
@@ -123,7 +128,14 @@ Willingness to pay is the strongest of the three finalists: solo operators alrea
 - **No one has won solo AI quoting yet.** The indie entrants show no traction: WalkQuote has 3 ratings, and SnapQuote has 0 reviews and 1 follower. The open gap is **distribution plus trust in AI pricing accuracy**, not the feature.
 
 #### Market size inference
-- Specialty-trade nonemployer firms number ~1.76M (2017). Self-employed carpenters were ~340K (2016) and 5–9% of the large electrician, plumber and HVAC workforces are self-employed. A plausible US addressable base of **1.5–3M solo or one-truck trade businesses** follows (my estimate). Many are part-time side businesses with low invoice volume.
+- **Licensed trades are a small solo pool.** Applying the self-employment shares to 2024 employment gives roughly:
+  - Electricians: 5% × 818.7K ≈ 41K.
+  - Plumbers: 6% × 504.5K ≈ 30K.
+  - HVAC: 8.6% × 425K ≈ 37K.
+  - That is only **~110K self-employed workers across the three named licensed trades** (my arithmetic on secondary figures).
+- **Handyman and general specialty trades are the bulk.** Specialty-trade nonemployer firms number ~1.76M (2017), construction nonemployers ~2.9M (2022, weak source), and self-employed carpenters ~340K (2016).
+- A plausible US addressable base is **1.5–3M solo or one-truck trade businesses**, mostly handyman, carpentry, painting, flooring, pressure-washing and similar work (my estimate). Many are part-time side businesses with low invoice volume.
+- **Implication:** the wedge should be **handyman and general home-repair first**, not electrician, plumber or HVAC. Those three trades are also where Jobber, Housecall Pro and ServiceTitan concentrate.
 
 #### Magic moment (5-second test)
 - **Strong.** A tech stands in a driveway, talks for 15 seconds ("replace 50-gallon water heater, haul old one, new expansion tank…"), and an itemized, branded **$2,140 quote** animates onto the screen and is texted to the homeowner. The homeowner taps "Approve", and the phone shows a **"Deposit paid $500"** notification.
@@ -142,7 +154,7 @@ Willingness to pay is the strongest of the three finalists: solo operators alrea
 |---|---|---|
 | Pain intensity | 7 | Quoting and invoicing at night after 10-hour days is a real and recurring complaint, and slow quotes lose jobs. But existing tools work; the pain is time and price, not "impossible". |
 | Frequency of use | 8 | Several quotes and invoices a week per operator, plus payment follow-ups. |
-| Market size | 7 | ~1.5–3M US solo or one-truck trade businesses (inferred from Census and BLS proxies). ARPU of $20–40/mo is realistic, unlike consumer apps. |
+| Market size | 7 | ~1.5–3M US solo or one-truck trade businesses (inferred from Census and BLS proxies), though only ~110K of them are self-employed electricians, plumbers or HVAC techs; the bulk are handyman and general trades. ARPU of $20–40/mo is realistic, unlike consumer apps. |
 | Competition gap | 3 | Jobber Voice, Joist AI on Basics, Housecall Pro voice-to-invoice and 15+ indie AI quoters. The gap is narrowing toward "cheaper and more accurate for one trade". |
 | Willingness to pay | 9 | Proven $15–$179/mo spend; Invoice2go had 226K payers; trades pay for tools that win jobs. |
 | Marketability | 7 | Excellent demo and a blue-collar creator wave, but the buyers are owners, reached through FB groups and YouTube; paid influencer CAC. |
@@ -159,8 +171,8 @@ Willingness to pay is the strongest of the three finalists: solo operators alrea
 - **Before building:** 20 owner-operator interviews in one trade; a landing page with $1 pre-orders through FB groups; and a manual accuracy test of an LLM plus price book on 30 real jobs.
 
 ### Gaps
-- Not retrieved: current App Store rating counts for Jobber, Housecall Pro, Invoice2go and Invoice Simple; Housecall Pro solo pricing; Invoice Simple's owner and traction. The App Store was blocked and search returned none.
-- Not retrieved: a primary BLS 2024 self-employment count by occupation (OOH/CPS) for electricians, plumbers, HVAC and general maintenance/handyman, and current Census Nonemployer Statistics by NAICS 2382x. bls.gov and census.gov were not reachable and search returned only secondary figures.
+- Not retrieved: current App Store rating counts for Housecall Pro, Invoice2go and Invoice Simple, and Invoice Simple's owner and traction. Jobber's count comes only from conflicting third-party trackers.
+- Not retrieved: a primary BLS 2024 self-employment count by occupation (OOH/CPS); total employment came only from secondary sites citing the OOH. Also missing: a general maintenance/handyman count and current Census Nonemployer Statistics by NAICS 2382x. bls.gov and census.gov were not reachable.
 - I could not confirm whether Jobber Voice uses the price book or how accurate its quotes are, or whether Joist's 2026 AI estimates are voice-driven. I found no independent accuracy data for any AI quoter; all time-saving claims are vendor self-reports.
 - No r/Handyman or r/sweatystartup sizes; no TikTok hashtag counts for #handyman, #plumber or #hvac.
 - Not found: Bolt, Quotr (distinct from Quotrr) and Workiz AI quote features; "Fieldy" appears to be a non-AI quoting app.
@@ -173,7 +185,7 @@ Willingness to pay is the strongest of the three finalists: solo operators alrea
 ### Takeaway
 The pain is real: 85% of freelancers are paid late at least sometimes, up to 87% of creators report late or problematic payments, and Net-60 is spreading. The population is large: 72.9M US independents in 2025, 27.6M full-time and 10.1M creators, rising to 74.9M in 2026.
 
-But **automatic reminders are a free commodity**: Zoho Invoice (free forever), Square Invoices (free, up to 6 reminders), Wave (free with online payments) and QuickBooks' Payments Agent (AI reminders since July 2025). At least **9 indie "AI invoice chaser" products launched in 2026 alone**, none with traction. Freelancers pay for *bundles* (proposals, contracts, CRM: HoneyBook $36+, Bonsai $15–59). Evidence that they would pay for chasing alone is weak. **Verdict: SKIP as a standalone. Fold it into A as the "get paid" engine**, or pursue only a narrow creator brand-deal niche.
+But **automatic reminders are a free commodity**: Zoho Invoice (free forever), Square Invoices (free, up to 6 reminders plus configurable late fees), Wave (free with online payments) and QuickBooks' Payments Agent (AI reminders since July 2025). At least **9 indie "AI invoice chaser" products launched in 2026 alone**, none with traction. Freelancers pay for *bundles* (proposals, contracts, CRM: HoneyBook $36+, Bonsai $15–59). Evidence that they would pay for chasing alone is weak. **Verdict: SKIP as a standalone. Fold it into A as the "get paid" engine**, or pursue only a narrow creator brand-deal niche.
 
 ### Cited Findings
 
@@ -190,7 +202,7 @@ But **automatic reminders are a free commodity**: Zoho Invoice (free forever), S
 - **Free reminder engines (commodity):**
   - **Zoho Invoice**: a permanently free plan with automatic reminders tied to the due date or expected payment date — [Zoho](https://www.zoho.com/invoice/wave-alternative); [Zoho KB](https://www.zoho.com/en-fr/invoice/kb/payments/invoice-reminders.html).
   - **Wave**: reminders only with online payments or Pro — [Wave support](https://support.waveapps.com/hc/en-us/articles/7993555321108).
-  - **Square Invoices**: automatic reminders, "up to 6" per invoice per a community post, but **not when the invoice is delivered by text** — [Square Seller Community](https://sellercommunity.com/t5/Product-Updates/Square-Invoices-Powerful-tools-make-invoicing-even-easier-so-you/ba-p/82131); [Square Community](https://community.squareup.com/t5/Payments-Troubleshooting/Can-Square-Invoices-Plus-TEXT-automated-payment-reminders/m-p/775582). Square's Managerbot agent is in beta — [PYMNTS](https://www.pymnts.com/?p=3689889).
+  - **Square Invoices**: automatic reminders, "up to 6" per invoice per a community post, but **not when the invoice is delivered by text** — [Square Seller Community](https://sellercommunity.com/t5/Product-Updates/Square-Invoices-Powerful-tools-make-invoicing-even-easier-so-you/ba-p/82131); [Square Community](https://community.squareup.com/t5/Payments-Troubleshooting/Can-Square-Invoices-Plus-TEXT-automated-payment-reminders/m-p/775582). Square also offers **late fees for invoices** (percentage or flat, with a grace period, settable as a default), launched around late 2023. They are not available for invoices with payment plans — [Square Seller Community: New Late Fees](https://sellercommunity.com/t5/Product-Updates/New-Late-Fees-for-Square-Invoices/m-p/692215); [Square Invoices app listing](https://appshunter.io/ios/app/square-invoices/id1405254630). Square's Managerbot agent is in beta — [PYMNTS](https://www.pymnts.com/?p=3689889).
   - **QuickBooks Payments Agent** (Jul 1, 2025): predicts late payers, suggests a reminder schedule (up to 3 reminders, ±90 days) and drafts messages. Intuit claims payment arrives 5 days faster (vendor claim) — [Intuit IR](https://investors.intuit.com/news-events/press-releases/detail/1258/intuit-introduces-ground-breaking-virtual-team-of-ai-agents-to-fuel-growth-for-businesses); [QuickBooks Help](https://quickbooks.intuit.com/learn-support/en-us/help-article/intuit-assist/get-started-payments-agent/L0FyKj9NL_US_en_US).
 - **2026 indie AI "chasers"** (none with visible traction):
   - **Nvoyce** (live June 2026) — [Indie Hackers](https://www.indiehackers.com/product/nvoyce).
@@ -239,7 +251,7 @@ But **automatic reminders are a free commodity**: Zoho Invoice (free forever), S
 - **The core "chase" mechanic is commoditized.** QuickBooks, Square, Zoho and Wave give it away. QuickBooks already sells an "AI predicts late payers and writes the reminder" story. A standalone iOS app would charge $8/mo for something free elsewhere.
 - **Residual gaps** (narrow):
   - (a) Square doesn't chase **text-delivered** invoices, a mobile-first gap.
-  - (b) The **escalation ladder with automatic contractual late fees** (none of the free tools clearly add late fees automatically).
+  - (b) An **escalation ladder that changes tone** (polite → firm → final notice), drafted in the user's voice. Late fees are *not* a gap: Square Invoices already applies configurable late fees for free.
   - (c) **Creator brand-deal tracking**: deliverables, posting date, Net-60 clocks and usage rights. Generic invoicing tools don't model these.
   - (d) "Who owes me" across *all* invoicing tools, which needs inbox parsing. Gmail restricted scopes and CASA cost make this costly (see `money_shopping_admin.md`).
 - **Magic moment:** moderate. "Overdue $3,200 → tap *Chase* → three escalating messages → 💸 Paid" works in about 8 seconds. But the payoff comes days later, so it has to be staged. Freelancer and creator TikTok is large, so the angle "my client paid 47 days late, here's what I do now" is native to the platform.
@@ -270,7 +282,7 @@ But **automatic reminders are a free commodity**: Zoho Invoice (free forever), S
 ### Gaps
 - No App Store ratings or counts for Bonsai, HoneyBook, FreshBooks, Indy, Moxie or Invoice Simple were retrieved.
 - Karat, Chaser, Hiveage and FreshBooks were not researched.
-- Whether Square, Zoho or QuickBooks apply **late fees automatically** is unconfirmed. QuickBooks and Wave support late fees in some form per background knowledge, but this was not sourced this session.
+- Square applies late fees (confirmed above). Whether Zoho Invoice and QuickBooks Online apply late fees automatically is unconfirmed this session.
 - No verbatim Reddit quotes from r/freelance or r/Upwork; no TikTok hashtag counts for #freelancer or #freelancelife.
 - A federal "Freelance Isn't Free" bill (2025) was not found in search.
 
@@ -449,7 +461,7 @@ None is a clear "BUILD" without the pre-validation steps listed, because every f
 - Avoid shipping multiple near-identical apps; Apple's spam and duplicate-app guideline 4.3 is a risk (background, unverified for current enforcement).
 - **Shared moat candidates:**
   - (1) Price-book or rate-card learning AI that drafts in the user's own prices and voice.
-  - (2) A reminder ladder that works for **SMS-delivered** invoices (Square's gap) and auto-applies contractual late fees.
+  - (2) A reminder ladder that works for **SMS-delivered** invoices (Square's gap) and escalates tone in the user's voice. Late fees alone are table stakes, since Square offers them free.
   - (3) A no-lock-in, flat-price promise aimed squarely at the Joist, Invoice Simple and HoneyBook price-hike backlash.
 
 #### Comparative scorecard
