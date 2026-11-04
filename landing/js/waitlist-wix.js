@@ -69,11 +69,13 @@ export function mount(formId) {
   btn.disabled = true;
 
   function build(s) {
+    // Mark built first: setValue below notifies the store's listeners synchronously,
+    // and that re-render must not rebuild the inputs.
+    built = true;
     const fields = s.form.fields;
     inner.innerHTML = fields.map(fieldHtml).join("");
     const src = fields.find(isSourceField);
     if (src) store.setValue(src.target, trafficSource());
-    built = true;
   }
 
   function render(s) {
@@ -116,20 +118,23 @@ export function mount(formId) {
     }
   }
 
+  // Errors appear on submit and clear as the visitor fixes the field. There is deliberately
+  // no validate-on-blur: a message appearing or vanishing on blur shifts the layout between
+  // mousedown and mouseup, so the click on the next option misses.
+  const recheck = (name) => { if (store.getState().errors[name]) store.validate(name); };
   formEl.addEventListener("input", (e) => {
     const el = e.target;
     if (!el.name || el.type === "radio" || el.type === "checkbox" || el.tagName === "SELECT") return;
     store.setValue(el.name, el.value);
+    recheck(el.name);
   });
   formEl.addEventListener("change", (e) => {
     const el = e.target;
     if (!el.name) return;
     if (el.type === "checkbox") store.setValue(el.name, el.checked);
     else if (el.type === "radio" || el.tagName === "SELECT") store.setValue(el.name, el.value);
-  });
-  formEl.addEventListener("focusout", (e) => {
-    const el = e.target;
-    if (el.name && el.type !== "radio") store.validate(el.name);
+    else return;
+    recheck(el.name);
   });
   formEl.addEventListener("submit", (e) => {
     store.submit(e);

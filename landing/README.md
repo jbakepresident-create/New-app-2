@@ -2,6 +2,31 @@
 
 A single-file landing page (`index.html`) for testing demand for **Steadily**, a GLP-1 tracker built around "your data is never held hostage". It collects waitlist emails plus four survey answers: journey stage, medication form, current tracker, and which plan they'd pick.
 
+## Live on Wix (current setup)
+
+The page is hosted on a Wix Headless site in the owner's Wix account, and signups go to Wix Forms.
+
+| | |
+|---|---|
+| Live page | https://headless-wgtroynfext-jbakepresident-140e.wix-site-host.com |
+| Wix dashboard | https://manage.wix.com/dashboard/f16ea781-2646-4b18-b8cf-0046d94a76aa |
+| **Signups** (view + export CSV) | https://manage.wix.com/dashboard/f16ea781-2646-4b18-b8cf-0046d94a76aa/wix-forms/form/48fe3a7b-ba29-4d44-a1da-64b675ceb9d2/submissions |
+| Edit the form's questions | https://manage.wix.com/dashboard/f16ea781-2646-4b18-b8cf-0046d94a76aa/wix-forms/form/48fe3a7b-ba29-4d44-a1da-64b675ceb9d2 |
+| Site ID / form ID | `f16ea781-2646-4b18-b8cf-0046d94a76aa` / `48fe3a7b-ba29-4d44-a1da-64b675ceb9d2` |
+
+How it works:
+- `index.html` sets `wixFormId` in `STEADILY_CONFIG`. When that is set, it loads `js/waitlist-wix.js`.
+- That script reads the form's live schema through Wix's form modules in `js/wix/`, which Wix installs on the site; they are not in this repo.
+- It shows the form in the page's own design.
+- The hidden **Traffic source** field is filled from `utm_source / utm_campaign / utm_medium / utm_content`, or from the referrer, so every signup shows where it came from.
+- Questions edited in the Wix dashboard show up on the page with no code change. Keep the label "Traffic source" on that hidden field.
+- Each signup also creates a contact in the site's Wix Contacts, through the email field.
+- Free Wix plan limits: 4 forms, 10 fields per form.
+
+To update the live page, upload the changed files to the same site ID with the Wix connector. Files to upload: `index.html`, `js/waitlist-wix.js`.
+
+Still missing: a visitor counter, needed for the signup rate. Wix Headless static hosting doesn't add analytics on its own. Add a Cloudflare Web Analytics or Plausible snippet (step 2), or read visit numbers from each channel (Reddit post views, TikTok views).
+
 ## 0. Run it locally (no accounts needed)
 
 ```bash
