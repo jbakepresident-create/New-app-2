@@ -304,7 +304,7 @@ Files are in `marketing/video/out/`. Each is 1080×1920, 30 fps, MP4, faceless a
 | `05-18k-reviews.mp4` | 5: I read 17,881 reviews | 27s | `Research first, code second. Would you use this? #buildinpublic #indiedev #glp1 #startup` |
 
 - **Covers:** `NN-name-cover.png` (the first scene).
-- **Photo-carousel versions:** `carousel/NN-name/*.jpg`. TikTok and Instagram photo posts often get more reach than videos for this kind of slideshow content. TikTok needs JPEG, which these are.
+- **Photo-carousel versions:** `carousels/NN-name/*.jpg`. TikTok and Instagram photo posts often get more reach than videos for this kind of slideshow content. TikTok needs JPEG, which these are.
 - **Honesty labels are built in:** competitor screens say "Illustration · not a real app", and unbuilt features say "Concept · coming soon". Keep them.
 - **Scripts 4 and 5 work even better on camera.** These faceless versions are a start; film yourself saying the same lines when you're ready.
 - **To change the text or timing:** edit `marketing/video/videos.json`, then run `node marketing/video/render-scenes.js marketing/video/videos.json /tmp/scenes && python3 marketing/video/build-videos.py marketing/video/videos.json /tmp/scenes marketing/video/out`.
