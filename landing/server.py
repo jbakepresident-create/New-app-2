@@ -89,8 +89,9 @@ class Handler(SimpleHTTPRequestHandler):
             })
             with open(os.path.join(ROOT, "index.html"), encoding="utf-8") as f:
                 page = f.read()
-            # Point an unconfigured form at this local server; a configured endpoint is left alone.
-            page = page.replace('const WAITLIST_ENDPOINT = "";', 'const WAITLIST_ENDPOINT = "/api/waitlist";')
+            # Local mode: skip Wix Forms and point an unconfigured form at this local server.
+            page = re.sub(r'wixFormId: "[^"]*"', 'wixFormId: ""', page)
+            page = page.replace('waitlistEndpoint: ""', 'waitlistEndpoint: "/api/waitlist"')
             return self._send(200, page, "text/html; charset=utf-8")
         if url.path == "/stats":
             return self._send(200, self.stats_page(), "text/html; charset=utf-8")

@@ -145,6 +145,8 @@
   form .btn { width: 100%; margin-top: 6px; }
   .fine { font-size: .8rem; color: var(--muted); margin-top: 12px; }
   .err { color: var(--danger); font-size: .9rem; margin-top: 10px; min-height: 1.2em; }
+  .field-err { color: var(--danger); font-size: .85rem; margin: 6px 0 0; }
+  .field-err:empty { display: none; }
   .thanks { display: none; text-align: center; padding: 20px 6px; }
   .thanks .big { font-size: 2.6rem; }
   form.done .fields { display: none; }
@@ -349,6 +351,7 @@
 
       <form id="waitlist" novalidate>
         <div class="fields">
+          <div class="fields-inner" id="fields-inner">
           <div class="field">
             <label for="email">Email</label>
             <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
@@ -393,6 +396,7 @@
               <label><input type="radio" name="plan" value="plus_yearly"><span>Plus · $49.99/yr</span></label>
             </div>
           </fieldset>
+          </div>
 
           <button class="btn" type="submit" id="submit">Join the waitlist</button>
           <div class="err" id="err" role="alert" aria-live="polite"></div>
@@ -433,9 +437,14 @@
 
 <script>
   // ---- CONFIG ----------------------------------------------------------
-  // Paste your form endpoint here (e.g. Formspree: "https://formspree.io/f/abcdwxyz").
-  // Signups are sent as JSON via POST. See landing/README.md for setup.
-  const WAITLIST_ENDPOINT = "";
+  // wixFormId: the Wix Forms form this page submits to when hosted on Wix (see README).
+  // waitlistEndpoint: otherwise, a URL that accepts a JSON POST (e.g. Formspree).
+  // The local server (server.py) clears wixFormId and points the endpoint at itself.
+  window.STEADILY_CONFIG = {
+    wixFormId: "48fe3a7b-ba29-4d44-a1da-64b675ceb9d2",
+    waitlistEndpoint: ""
+  };
+  const WAITLIST_ENDPOINT = window.STEADILY_CONFIG.waitlistEndpoint;
   // ---------------------------------------------------------------------
 
   document.getElementById("yr").textContent = new Date().getFullYear();
@@ -445,7 +454,7 @@
   const btn = document.getElementById("submit");
   const params = new URLSearchParams(location.search);
 
-  form.addEventListener("submit", async (e) => {
+  if (!window.STEADILY_CONFIG.wixFormId) form.addEventListener("submit", async (e) => {
     e.preventDefault();
     err.textContent = "";
     const fd = new FormData(form);
@@ -499,6 +508,16 @@
       else { await navigator.clipboard.writeText(url); document.getElementById("share").textContent = "Link copied ✓"; }
     } catch (_) { /* user cancelled */ }
   });
+</script>
+<script type="module">
+  const id = window.STEADILY_CONFIG.wixFormId;
+  if (id) {
+    import("/js/waitlist-wix.js")
+      .then((m) => m.mount(id))
+      .catch(() => {
+        document.getElementById("err").textContent = "The signup form couldn't load. Please refresh the page.";
+      });
+  }
 </script>
 </body>
 </html>
